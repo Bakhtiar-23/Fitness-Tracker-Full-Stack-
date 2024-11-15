@@ -2,7 +2,7 @@
 # Fitness-Tracker-Full-Stack-
 A full-stack Fitness Tracker application built with JavaScript. The frontend uses React and Vite for a fast, modern UI, while the backend is powered by Node.js and Express to handle API requests and data management. Tracks user workouts, goals, and progress efficiently.
 
-# Fitness Tracker Full Stack
+# Some instructions to get started with: 
 
 This is a full-stack Fitness Tracker application built with React, Node.js, Express, and Vite. Below are the steps to clone the project, install dependencies, and run the application.
 
