@@ -12,6 +12,7 @@ Before you begin, ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (version 16.x or higher)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 - [Git](https://git-scm.com/)
+- [MangoDB](https://mangodb.com) (Database)
 
 ## Getting Started
 
