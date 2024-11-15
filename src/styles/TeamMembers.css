@@ -1,0 +1,61 @@
+.contact-us-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.left-section {
+  flex: 1;
+  text-align: left;
+  padding-right: 2rem;
+  color: black; /* Ensure text in the left section is black */
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5cm; /* Increased gap for better spacing */
+}
+
+.team-member-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7cm;
+  height: 2cm;
+  padding: 0.5rem;
+  border: 1px solid #171616; /* Black border for clarity */
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #d1d1a8; /* Subtle background */
+  color: black; /* Black text for better readability */
+  transition: background-color 0.3s ease;
+}
+
+.team-member-button:hover {
+  background-color: #e0e1d7; /* Slight hover effect */
+}
+
+.member-photo {
+  width: 57px;
+  height: 57px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensure photos are properly resized */
+}
+
+.member-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 0.5rem;
+  color: black; /* Black text for names */
+}
+
+.arrow-symbol {
+  font-size: 1.5rem; /* Slightly larger caret for emphasis */
+  font-weight: bold; /* Bold caret symbol for better visibility */
+  color: black; /* Black caret symbol */
+  margin-left: auto; /* Keep it aligned to the right */
+}

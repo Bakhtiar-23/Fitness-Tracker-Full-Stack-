@@ -1,0 +1,48 @@
+main {
+  padding: 20px;
+}
+
+.workout-level {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2rem;
+}
+
+.horizontal-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.exercise-sample-card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 30%; /* Adjust as needed to fit horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.exercise-sample-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.video-container {
+  margin-top: 0.5rem;
+}
+
+.details-link {
+  display: block;
+  margin-top: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+}
+iframe {
+  border: none; /* Removes the border around the iframe */
+}

@@ -1,0 +1,110 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f7f7f7; /* Sets a background color */
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #eebdad; /* Hover effect for links */
+}
+
+/* Dashboard Styles */
+.dashboard {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+.dashboard h1 {
+    text-align: center;
+    color: #333;
+}
+
+.dashboard-overview {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.dashboard-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap onto new lines */
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.dashboard .section {
+    width: 100%;  /* Make sections take up full width by default */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;  /* Add space between sections */
+}
+
+.dashboard .section h3 {
+    margin-bottom: 10px; /* Space between title and content */
+}
+
+.dashboard .section p {
+    margin-bottom: 20px; /* Space between text and button */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #e64a19;
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
+    .dashboard .section {
+        width: 45%;  /* Make sections take up 45% width on medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard .section {
+        width: 30%;  /* Make sections take up 30% width on large screens */
+    }
+}

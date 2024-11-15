@@ -1,0 +1,104 @@
+/* src/styles/AccountPage.css */
+.account-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+input {
+  padding: 5px;
+  width: 100%;
+}
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.uploaded-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.weekly-day {
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.weekly-day.focused {
+  background-color: #007bff;
+  color: white;
+}
+
+.weekly-day.today {
+  background-color: #ffeeba; /* Light yellow for today's date */
+  font-weight: bold;
+}
+
+.focused-day {
+  background-color: #d1ecf1; /* Light blue for the focused day */
+}
+
+.current-day-box {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.current-day-display {
+  font-size: 14px;
+}
+
+.current-day-display.focused {
+  background-color: #d1ecf1; /* Light blue for today's focused details */
+  padding: 8px;
+  border-radius: 4px;
+}

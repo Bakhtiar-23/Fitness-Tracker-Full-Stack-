@@ -1,0 +1,64 @@
+.exercise-log {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .exercise-log form {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input, select {
+    margin-left: 10px;
+    padding: 5px;
+    width: 3cm;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .course-image {
+    flex: 0 1 auto;
+    margin-left: 20px;
+    max-width: 40%;
+  }
+  
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .course-details {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .subscribe-button {
+    background-color: #28a745;
+    margin-top: 10px;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #218838;
+  }
+  
