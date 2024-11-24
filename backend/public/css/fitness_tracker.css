@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina");
+
+body {
+  margin: 0;
+  padding-top: 120px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #625a56;
+}
+
+#nav {
+  width: 100%;
+  height: 110px;
+  padding: 20px 0 5px 0;
+  background-color: #333; 
+  border-bottom: solid 8px #b5b20b;
+  box-shadow: 10px 10px 10px #ccc;
+  position: absolute;
+  top: 0;
+}
+
+#title {
+  color: #c5c0bd;
+  margin: 0;
+  font-family: "Baloo Bhaina";
+  text-transform: uppercase;
+}
+
+/* Ensure videos start 2cm below the header */
+.video-container {
+  margin-top: 2cm; /* Position 2cm below the header */
+  padding: 20px; /* Optional padding for container */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between videos */
+}
+
+/* Videos Section Heading */
+.videos-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+  font-weight: bold;
+}
+
+/* Individual Video Item */
+.video-item {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* Aspect ratio for 16:9 */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: #000; /* Fallback background color */
+}
+
+/* Video Background */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interaction with the video */
+  z-index: 1;
+  object-fit: cover; /* Ensure the video covers the space */
+}
+
+/* Overlay Text */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+}
+
+.video-overlay h3 {
+  font-size: 6rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1cm; /* Adjust the space between h3 and p */
+}
+
+.video-overlay p {
+  font-size: 2rem;
+  margin-top: 1cm; /* Add margin to the top for additional space */
+}
+
+.video-overlay a {
+  font-size: 1,5rem;
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff5722;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.video-overlay a {
+  background-color: #e64a19;
+  transform: scale(1.05);
+}
+
+/* Section container for flexbox layout */
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+
+img {
+  width: 100%;
+}
+
+.main-container {
+  background-color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Optional, for a shadow effect around the whole container */
+}
+
+/* Section container for flexbox layout */
+.section-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Individual section styling */
+.section-item {
+  background-color: #f1f1f1;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: calc(33.33% - 20px); /* Adjusted width for consistent spacing */
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.section-item:hover {
+  transform: translateY(-5px); /* Adds a subtle hover effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Section headings */
+.section-item h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Section text */
+.section-item p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Buttons in each section */
+.section-item .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.section-item .btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Call to action section */
+.cta {
+  background-color: #88da82;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.cta h2 {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cta .cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #ff5722;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta .cta-button:hover {
+  background-color: #e64a19;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-item {
+    width: 100%; /* Full width for smaller screens */
+  }
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+#nav a {
+  text-decoration: none;
+}
+
+.nav-align {
+  text-align: center;
+  padding: 3px 0;
+}
+
+.container {
+  padding: 0% 10%;
+}
+
+.button {
+  background-color: #3d41b4;
+  padding: 0.3vw 3vw;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #697acb;
+}
+
+.subscriber {
+  padding: 10px 0px;
+  border-bottom: 1px solid lightgray;
+}
+
+.subscriber p {
+  margin: 0;
+}
+
+.list-container {
+  padding: 0 20px;
+  border: 3px solid #697acb;
+  border-radius: 1px;
+}
+
+.item-label {
+  font-weight: 600;
+  font-style: italic;
+  margin-right: 5px;
+}
+
+.subscription-form input {
+  display: block;
+  margin: 5px;
+}
+
+.data-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.data-form label {
+  margin: 5px 0 0 0;
+}
+
+.hidden-text {
+  -webkit-text-security: disc;
+}
+
+/* Add this CSS to your recipe_app.css or a separate CSS file */
+.flashes {
+  margin: 20px 0;
+}
+
+.flash {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.flash.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.flash.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+
+/* Footer Section Styling */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+#footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+footer nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  margin: 0 15px;
+}
+
+footer nav a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}

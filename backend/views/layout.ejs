@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1">
+	<title>Fitness Tracker</title>
+	<link rel="shortcut icon" type="image/png" href="/images/icon.png" />
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/fitness_tracker.css">
+</head>
+
+<body>
+	<div id="nav">
+		<div class="col-sm nav-align">
+			<h1 id="title">Fitness Tracker</h1>
+		</div>
+		<div class="col-sm nav-align">
+			<a href="/">
+				<span class="button">Home</span>
+			</a>
+			<a href="/dashboard">
+				<span class="button">Dashboard</span>
+			</a>
+      <a href="/courses">
+				<span class="button">Courses</span>
+			</a>
+			<a href="/contact">
+				<span class="button">Contact Us</span>
+			</a>
+      <a href="/team-memebers">
+				<span class="button">team Members</span>
+			</a>
+      <a href="/settings">
+				<span class="button">Settings</span>
+			</a>
+		</div>
+	</div>
+	<div class="flashes">
+		<% if (flashMessages) { %>
+		<% if (flashMessages.success) { %>
+		<div class="flash success">
+			<%= flashMessages.success %>
+		</div>
+		<% } else if (flashMessages.error) { %>
+		<div class="flash error">
+			<%= flashMessages.error %>
+		</div>
+		<% } %>
+		<% } %>
+	</div>
+
+	<div class="container">
+		<%- body %>
+	</div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+  <div id="footer-content">
+    <p>© 2024 Fitness Tracker. All Rights Reserved.</p>
+    <nav>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="/contact">Contact Us</a>
+    </nav>
+  </div>
+</footer>
+  
+
+</body>
+
+</html>

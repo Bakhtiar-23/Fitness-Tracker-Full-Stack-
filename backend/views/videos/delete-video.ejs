@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Video Deletion</title>
+</head>
+<body>
+  <h1>Are you sure you want to delete this video?</h1>
+  <p>Title: <%= video.title %></p>
+  <p>URL: <a href="<%= video.url %>" target="_blank">Watch Video</a></p>
+
+  <form action="/video/<%= video._id %>?_method=DELETE" method="POST">
+    <button type="submit">Yes, Delete</button>
+  </form>
+  <a href="/add-video">Cancel</a>
+</body>
+</html>

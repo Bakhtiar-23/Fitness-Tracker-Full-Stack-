@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-6">
+      <img src="images/fitness.jpg" alt="Fitness Journey" style="width:100%; height:auto;">
+    </div>
+    <div class="col-sm-6">
+      <h1>Welcome to Fitness Tracker!</h1>
+      <p>Track your fitness journey, log your activities, and achieve your health goals!</p>
+      <p>Need help staying on track? <a href="/subscribe">Subscribe</a> to our newsletter for tips and motivation!</p>
+      <p>Have any questions or feedback? <a href="/contact">Contact us</a> — we'd love to hear from you!</p>
+    </div>
+  </div>
+  
+  <h2 class="videos-heading">Existing Videos</h2>
+  <div class="video-container">
+    <% videos.forEach(video => { %>
+      <div class="video-item">
+        <iframe
+          class="video-bg"
+          src="<%= video.url %>"
+          frameborder="0"
+          allow="autoplay; fullscreen; encrypted-media"
+          allowfullscreen
+        ></iframe>
+        <div class="video-overlay">
+          <h3>Welcome to Fitness Tracker</h3>
+          <p>Track your fitness journey and stay motivated!</p>
+          <a href="/users/new" class="cta-button">Get Started</a>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+  
+  <div class="main-container">
+    <div class="section-container">
+      <section class="section-item track-workouts">
+        <h2>Track Your Workouts</h2>
+        <p>Log your daily fitness activities and keep track of your progress!</p>
+        <a href="/dashboard" class="btn btn-primary">Go to Track Workouts</a>
+      </section>
+  
+      <section class="section-item monitor-nutrition">
+        <h2>Monitor Nutrition</h2>
+        <p>Keep an eye on your diet and make healthier choices.</p>
+        <a href="/dashboard" class="btn btn-primary">Healthier Choices</a>
+      </section>
+  
+      <section class="section-item set-goals">
+        <h2>Set Goals</h2>
+        <p>Set fitness goals and stay motivated to achieve them.</p>
+        <a href="/dashboard" class="btn btn-primary">Set Goals</a>
+      </section>
+    </div>
+  
+    <section class="cta">
+      <h2>Ready to start your fitness journey?</h2>
+      <a href="/users/new" class="cta-button">Sign Up Now</a>
+    </section>
+  </div>
