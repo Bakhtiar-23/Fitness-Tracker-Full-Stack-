@@ -34,11 +34,10 @@ npm run dev
 
 ## Back-end runing on the 
 ```bash 
-cd Server
+cd backend
 
-node Server.js 
+node main.js 
 
-#or
-npm start
+
  
 
