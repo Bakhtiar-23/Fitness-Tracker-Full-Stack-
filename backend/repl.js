@@ -3,7 +3,7 @@ const mongoose = require("mongoose"),
   Course = require("./models/course");
 var testCourse, testSubscriber;
 mongoose.connect(
-  "MONGO_URI=mongodb://fitnessUser:Danyar21@localhost:27017/fitnessTracker",
+  "MONGO_URI=mongodb://localhost:27017/fitnessTracker",
   { useNewUrlParser: true }
 );
 mongoose.set("useCreateIndex", true);
