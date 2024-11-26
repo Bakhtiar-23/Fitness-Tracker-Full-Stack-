@@ -7,6 +7,12 @@ const homeController = {
   getDashboardPage: (req, res) => {
     res.render('dashboard')
   },
+  getTeamMembersPage: (req, res) => {
+    // Dummy data for team members
+    const teamMembers = [];
+
+    res.render('teamMembers', { teamMembers });
+  },
   index: async (req, res) => {
     try {
       const videos = await Video.find();
