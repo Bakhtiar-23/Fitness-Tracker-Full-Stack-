@@ -2,7 +2,7 @@ const mongoose = require("mongoose"),
   Subscriber = require("./models/subscriber");
 
 mongoose.connect(
-  "MONGO_URI=mongodb://localhost:27017/fitnessTracker",
+  "MONGO_URI=mongodb://fitnessUser:Danyar21@localhost:27017/fitnessTracker",
   { useNewUrlParser: true }
 );
 mongoose.connection;
