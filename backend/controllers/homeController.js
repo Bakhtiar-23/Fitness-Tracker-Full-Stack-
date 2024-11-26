@@ -4,6 +4,9 @@ const homeController = {
   getSubscriptionPage: (req, res) => {
     res.render('contact');
   },
+  getDashboardPage: (req, res) => {
+    res.render('dashboard')
+  },
   index: async (req, res) => {
     try {
       const videos = await Video.find();

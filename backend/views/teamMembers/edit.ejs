@@ -1,0 +1,22 @@
+<div class="data-form">
+    <form class="form-signin" method="POST" action="/team-member/<%= teamMember._id %>" enctype="multipart/form-data">
+      <h2>Edit user:</h2>
+      <label for="inputFullName">Full Name</label>
+      <input class="form-control" type="text" name="name" id="inputFullName" value="<%= teamMember.name %>" placeholder="FullName" autofocus>
+
+      <label for="inputRole">Role</label>
+      <input class="form-control" type="text" name="role" id="inputRole" value="<%= teamMember.role %>" placeholder="Role">
+
+      <label for="inputEmail">Email</label>
+      <input class="form-control" type="email" name="email" id="inputEmail" value="<%= teamMember.email %>" placeholder="Email" required>
+
+      <label for="experience">Experience:</label>
+      <!-- Corrected the textarea, no value attribute, content between opening and closing tags -->
+      <textarea class="form-control" name="experience" id="inputExperience" placeholder="Describe experience" required><%= teamMember.experience %></textarea>
+
+      <label for="image" class="image-upload-label">Upload New Image (optional):</label>
+      <input class="form-control image-upload-input" type="file" name="image" id="image" accept="image/*">
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+    </form>
+</div>

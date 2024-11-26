@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-sm-6">
+    <img src="images/fitness.jpg" alt="Fitness Journey" style="width:100%; height:auto;">
+  </div>
+  <div class="col-sm-6">
+    <h1>Meet the Fitness Tracker Team</h1>
+    <p>Track your fitness journey, log your activities, and achieve your health goals!</p>
+    <p>Need help staying on track? <a href="/subscribe">Subscribe</a> to our newsletter for tips and motivation!</p>
+    <p>Have any questions or feedback? <a href="/contact">Contact us</a> — we'd love to hear from you!</p>
+  </div>
+</div>
+
+<section id="team-members">
+  <h2>Our Personal Trainers</h2>
+
+  <div class="container">
+    <% teamMembers.forEach(trainer => { %>
+      <section class="team-member">
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="<%= trainer.image %>" alt="Image of <%= trainer.name %>" style="width:100%; height:auto;">
+          </div>
+          <div class="col-sm-8">
+            <h3><%= trainer.name %></h3>
+            <p><%= trainer.experience %></p>
+            <a href="/team-members/<%= trainer._id %>" class="btn btn-primary">View Profile</a>
+          </div>
+        </div>
+      </section>
+    <% }); %>
+  </div>
+</section>

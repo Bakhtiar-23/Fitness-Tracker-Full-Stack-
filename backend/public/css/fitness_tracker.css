@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina");
 
-body {
+html, body {
   margin: 0;
   padding-top: 120px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #625a56;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #nav {
   width: 100%;
-  height: 110px;
+  height: 140px;
   padding: 20px 0 5px 0;
   background-color: #333; 
   border-bottom: solid 8px #b5b20b;
@@ -23,6 +26,10 @@ body {
   margin: 0;
   font-family: "Baloo Bhaina";
   text-transform: uppercase;
+}
+
+main {
+  flex-grow: 1; 
 }
 
 /* Ensure videos start 2cm below the header */
@@ -126,8 +133,11 @@ body {
 }
 
 
-img {
+.img {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-container {
@@ -259,8 +269,8 @@ a {
 
 .button {
   background-color: #3d41b4;
-  padding: 0.3vw 3vw;
-  border-radius: 2px;
+  padding: 12px 20px;
+  border-radius: 30px;
   cursor: pointer;
   display: inline-block;
   color: #fff;
@@ -296,13 +306,78 @@ a {
   margin: 5px;
 }
 
+/* Modern user form styles */
 .data-form {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
   max-width: 600px;
-  margin: 0 auto;
+  margin: 50px auto;
+}
+
+.data-form h2 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+  color: #4e54c8;
+  margin-bottom: 20px;
 }
 
 .data-form label {
-  margin: 5px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #444;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.data-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.data-form input:focus {
+  border-color: #4e54c8;
+  outline: none;
+}
+
+.data-form button {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.data-form button:hover {
+  background: linear-gradient(135deg, #8f94fb, #4e54c8);
+}
+
+@media screen and (max-width: 768px) {
+  #nav {
+    padding: 10px 20px;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .data-form {
+    padding: 20px;
+  }
+
+  #title {
+    font-size: 20px;
+  }
 }
 
 .hidden-text {
@@ -335,12 +410,72 @@ a {
 }
 
 
+/* Container for the dashboard */
+.fitness-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Section Styling */
+.fitness-dashboard section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fitness-dashboard section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.fitness-dashboard h2 {
+  font-size: 2rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.fitness-dashboard p {
+  font-size: 1,5rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1,5rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.primary-btn:hover {
+  background-color: #45a049;
+  color: #fff;
+}
+
 /* Footer Section Styling */
 footer {
   background-color: #222;
   color: #fff;
   padding: 40px 0;
   text-align: center;
+  margin-top: auto; 
 }
 
 #footer-content {
@@ -363,4 +498,49 @@ footer nav a {
 footer nav a:hover {
   text-decoration: underline;
   color: #007bff;
+}
+
+/* Style for the label */
+.image-upload-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Style for the file input */
+.image-upload-input {
+  font-size: 1,5rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+/* Style for the file input on focus */
+.image-upload-input:focus {
+  border-color: #66afe9;
+  outline: none;
+  box-shadow: 0 0 8px rgba(102, 175, 233, .6);
+}
+
+/* Style for the file input when a file is selected */
+.image-upload-input::file-selector-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1,5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the file input button */
+.image-upload-input::file-selector-button:hover {
+  background-color: #0056b3;
 }

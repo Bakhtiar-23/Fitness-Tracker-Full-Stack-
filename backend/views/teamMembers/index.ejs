@@ -1,0 +1,50 @@
+<h1>List of Team Members Created</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Experience</th>
+      <th>Profile Image</th>
+      <th>View Profile</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% teamMembers.forEach(teamMember => { %>
+      <tr>
+        <td>
+          <a href="<%= `/team-member/${teamMember._id}` %>">
+            <%= teamMember.name %>
+          </a>
+        </td>
+        <td>
+          <%= teamMember.role %>
+        </td>
+        <td>
+          <%= teamMember.experience %>
+        </td>
+        <td>
+          <img 
+            src="<%= teamMember.image ? teamMember.image : '/path/to/default/image.jpg' %>" 
+            alt="Profile picture of <%= teamMember.name %> - <%= teamMember.role %>" 
+            class="team-member-image"
+            style="width: 50px; height: 50px;" <!-- Optional image size -->
+          >
+        </td>
+        <td>
+          <a href="/team-member/<%= teamMember._id %>" class="team-member-link">View Profile &gt;</a>
+        </td>
+        <td>
+            <a href="<%=`/team-member/${teamMember._id}/edit`%>">
+              Edit
+            </a>
+          </td>
+          <td>
+            <a href="<%=`/team-member/${teamMember._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
+          </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

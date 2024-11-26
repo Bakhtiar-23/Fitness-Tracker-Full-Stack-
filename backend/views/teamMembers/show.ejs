@@ -1,0 +1,10 @@
+<!-- views/teamMembers/show.ejs -->
+<h1><%= teamMember.name %>'s Profile</h1>
+<img src="<%= teamMember.image %>" alt="Profile picture of <%= teamMember.name %>">
+<p><strong>Role:</strong> <%= teamMember.role %></p>
+<p><strong>Email:</strong> <%= teamMember.email %></p>
+<p><strong>Experience:</strong> <%= teamMember.experience %></p>
+<a href="/team-member/<%= teamMember._id %>/edit">Edit Profile</a>
+<form action="/team-member/<%= teamMember._id %>/delete" method="POST">
+  <button type="submit">Delete Profile</button>
+</form>
