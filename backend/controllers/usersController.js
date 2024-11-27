@@ -54,15 +54,6 @@ module.exports = {
       });
   },
 
-  redirectView: (req, res, next) => {
-    const redirectPath = res.locals.redirect;
-    if (redirectPath) {
-      res.redirect(redirectPath);
-    } else {
-      next();
-    }
-  },
-
   show: (req, res, next) => {
     const userId = req.params.id;
     User.findById(userId)
@@ -132,28 +123,27 @@ module.exports = {
           user.passwordComparison(req.body.password)
             .then(passwordsMatch => {
               if (passwordsMatch) {
-                // Password matches, redirect to the user profile page
-                res.locals.redirect = `/users/${user._id}`;
+                // Set user session after successful login
+                req.session.userId = user._id;  // Store user ID in session
                 req.flash("success", `${user.fullName}'s logged in successfully!`);
-                res.locals.user = user;
+                res.locals.redirect = `/users/${user._id}/profile`;  // Redirect to profile page
+                return next(); // Add this to ensure the next middleware runs (redirect)
               } else {
-                // Password mismatch
                 req.flash("error", "Incorrect password.");
                 res.locals.redirect = "/users/login";
+                return next(); // Add this to ensure the next middleware runs (redirect)
               }
-              next();
             })
             .catch(error => {
               console.error("Error comparing password:", error);
               req.flash("error", "An error occurred while comparing passwords.");
               res.locals.redirect = "/users/login";
-              next();
+              return next(); // Add this to ensure the next middleware runs (redirect)
             });
         } else {
-          // User not found
           req.flash("error", "User not found.");
           res.locals.redirect = "/users/login";
-          next();
+          return next(); // Add this to ensure the next middleware runs (redirect)
         }
       })
       .catch(error => {
@@ -161,6 +151,8 @@ module.exports = {
         next(error);
       });
   },
+  
+  
 
   validate: (req, res, next) => {
     req.sanitizeBody("email").normalizeEmail({ all_lowercase: true }).trim();
@@ -183,5 +175,61 @@ module.exports = {
         next();
       }
     });
+  },
+  ensureAuthenticated: (req, res, next) => {
+    if (req.session.userId) {
+      next(); // User is authenticated, proceed to the next middleware/controller
+    } else {
+      req.flash("error", "You need to log in to access this page.");
+      res.locals.redirect = "/users/login"; // Set the redirect path
+      next(); // Proceed to the next handler (redirect view)
+    }
+  },
+  showProfile: (req, res, next) => {
+    const userId = req.params.id;  // Get the user ID from the URL
+    if (req.session.userId !== userId) {
+        req.flash("error", "You are not authorized to view this profile.");
+        res.locals.redirect = "/users/login";
+        next();
+    } else {
+        User.findById(userId)
+            .then(user => {
+                if (user) {
+                    res.locals.user = user;  // Pass user data to the view
+                    res.render("users/profile");  // Render profile view
+                } else {
+                    req.flash("error", "User not found.");
+                    res.locals.redirect = "/users/login";
+                    next();
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching user profile:", error);
+                next(error);
+            });
+    }
+},
+
+  
+logout: (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error(`Error logging out: ${err.message}`);
+      req.flash("error", "Could not log out. Please try again.");
+      return res.redirect('/users/login');
+    }
+    req.flash("success", "You have successfully logged out.");
+    res.redirect('/users/login'); // Redirect to login after logout
+  });
+},
+
+redirectView: (req, res, next) => {
+  const redirectPath = res.locals.redirect;
+  if (redirectPath) {
+    return res.redirect(redirectPath);  // Ensure that redirection happens
   }
+  next();  // Proceed if no redirect
+}
+  
 };
+

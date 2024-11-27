@@ -9,6 +9,7 @@ const errorController = require('./controllers/errorController');
 const teamMembersController = require("./controllers/teamMembersController");
 const multer = require("multer");
 const upload = multer({ dest: "public/uploads/" });
+const { ensureAuthenticated } = usersController;
 const router = express.Router();
 
 // Route for the home page
@@ -29,7 +30,9 @@ router.get("/users", usersController.index, usersController.indexView);
 router.get("/users/new", usersController.new);
 router.post("/users/create", usersController.create, usersController.redirectView);
 router.get("/users/login", usersController.login);
-router.post("/users/login", usersController.authenticate, usersController.redirectView);
+router.post("/users/login", usersController.authenticate, usersController.redirectView); // Handle POST request for login
+router.get("/users/:id/profile", ensureAuthenticated, usersController.showProfile);
+router.get("/logout", usersController.logout, usersController.redirectView);
 router.get("/users/:id/edit", usersController.edit);
 router.put("/users/:id/update", usersController.update, usersController.redirectView);
 router.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
